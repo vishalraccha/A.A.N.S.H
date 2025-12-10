@@ -1,0 +1,191 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" 
+                          xmlns:p="urn:schemas-microsoft-com:office:powerpoint" 
+                          xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="utf-8">
+<title>Top 10 Richest Businessmen in the World</title>
+<!--[if gte mso 9]>
+<xml>
+<p:PresentationProp>
+<p:Template>Blank Presentation</p:Template>
+</p:PresentationProp>
+</xml>
+<![endif]-->
+<style>
+body { font-family: Calibri, Arial, sans-serif; margin: 0; padding: 0; }
+.slide {
+    width: 10in;
+    height: 7.5in;
+    margin: 20px auto;
+    padding: 60px;
+    border: 2px solid #ccc;
+    page-break-after: always;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.slide:nth-child(even) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+.slide h1 {
+    font-size: 48pt;
+    margin-bottom: 30pt;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.slide h2 {
+    font-size: 36pt;
+    margin-bottom: 30pt;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.slide ul {
+    list-style: none;
+    font-size: 24pt;
+    line-height: 2;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 80%;
+}
+.slide li {
+    margin: 15pt 0;
+    padding-left: 30pt;
+    position: relative;
+}
+.slide li:before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-size: 20pt;
+}
+.slide-number {
+    position: absolute;
+    bottom: 20pt;
+    right: 20pt;
+    font-size: 18pt;
+}
+</style>
+</head>
+<body>
+
+<!-- Title Slide -->
+<div class="slide">
+    <h1>Top 10 Richest Businessmen in the World</h1>
+    <p style="font-size: 24pt; margin-top: 40pt;">
+        Professional Presentation<br>
+        27/9/2025
+    </p>
+    <div class="slide-number">1 / 14</div>
+</div>
+
+
+<div class="slide">
+    <h2>Introduction: The Titans of Industry</h2>
+    <ul>
+        <li>Welcome to the world of the ultra-wealthy!</li><li>This presentation profiles the top 10 richest businessmen globally.</li><li>We'll explore their sources of wealth, business empires, and key achievements.</li><li>Note: Rankings fluctuate based on market conditions and asset valuations.</li>
+    </ul>
+    <div class="slide-number">2 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>#1: Elon Musk</h2>
+    <ul>
+        <li>Net Worth (Approximate): $200+ Billion</li><li>Primary Source of Wealth: Tesla, SpaceX</li><li>Key Achievements: Revolutionizing electric vehicles, pioneering space exploration, influencing social media.</li><li>Notable Ventures: Neuralink, The Boring Company</li>
+    </ul>
+    <div class="slide-number">3 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>#2: Jeff Bezos</h2>
+    <ul>
+        <li>Net Worth (Approximate): $150+ Billion</li><li>Primary Source of Wealth: Amazon</li><li>Key Achievements: Transforming e-commerce, cloud computing leadership (AWS), space tourism (Blue Origin).</li><li>Notable Ventures: Blue Origin, The Washington Post</li>
+    </ul>
+    <div class="slide-number">4 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>#3: Bernard Arnault & Family</h2>
+    <ul>
+        <li>Net Worth (Approximate): $180+ Billion</li><li>Primary Source of Wealth: LVMH (Luxury Goods)</li><li>Key Achievements: Building the world's largest luxury goods conglomerate.</li><li>Notable Brands: Louis Vuitton, Dior, Tiffany & Co.</li>
+    </ul>
+    <div class="slide-number">5 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>#4: Bill Gates</h2>
+    <ul>
+        <li>Net Worth (Approximate): $120+ Billion</li><li>Primary Source of Wealth: Microsoft</li><li>Key Achievements: Co-founding Microsoft, revolutionizing personal computing, philanthropic efforts through the Bill & Melinda Gates Foundation.</li><li>Notable Ventures: Bill & Melinda Gates Foundation</li>
+    </ul>
+    <div class="slide-number">6 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>#5: Warren Buffett</h2>
+    <ul>
+        <li>Net Worth (Approximate): $110+ Billion</li><li>Primary Source of Wealth: Berkshire Hathaway</li><li>Key Achievements: Legendary investor, known for value investing principles.</li><li>Notable Investments: Coca-Cola, Apple, Bank of America</li>
+    </ul>
+    <div class="slide-number">7 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>#6: Larry Ellison</h2>
+    <ul>
+        <li>Net Worth (Approximate): $100+ Billion</li><li>Primary Source of Wealth: Oracle</li><li>Key Achievements: Co-founding Oracle, a leading database software company.</li><li>Notable Ventures: Oracle</li>
+    </ul>
+    <div class="slide-number">8 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>#7: Mark Zuckerberg</h2>
+    <ul>
+        <li>Net Worth (Approximate): $80+ Billion</li><li>Primary Source of Wealth: Meta (Facebook)</li><li>Key Achievements: Co-founding Facebook, connecting billions of people globally.</li><li>Notable Ventures: Meta (Facebook, Instagram, WhatsApp)</li>
+    </ul>
+    <div class="slide-number">9 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>#8: Larry Page</h2>
+    <ul>
+        <li>Net Worth (Approximate): $80+ Billion</li><li>Primary Source of Wealth: Google (Alphabet)</li><li>Key Achievements: Co-founding Google, revolutionizing internet search.</li><li>Notable Ventures: Alphabet (Google, Waymo, Verily)</li>
+    </ul>
+    <div class="slide-number">10 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>#9: Sergey Brin</h2>
+    <ul>
+        <li>Net Worth (Approximate): $80+ Billion</li><li>Primary Source of Wealth: Google (Alphabet)</li><li>Key Achievements: Co-founding Google, revolutionizing internet search.</li><li>Notable Ventures: Alphabet (Google, Waymo, Verily)</li>
+    </ul>
+    <div class="slide-number">11 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>#10: Michael Dell</h2>
+    <ul>
+        <li>Net Worth (Approximate): $70+ Billion</li><li>Primary Source of Wealth: Dell Technologies</li><li>Key Achievements: Founding Dell Technologies, a leading computer manufacturer.</li><li>Notable Ventures: Dell Technologies</li>
+    </ul>
+    <div class="slide-number">12 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>Key Takeaways & Lessons Learned</h2>
+    <ul>
+        <li>Innovation and disruption are key drivers of wealth creation.</li><li>Long-term vision and strategic investments are crucial for success.</li><li>Building strong teams and fostering a culture of innovation is essential.</li><li>Philanthropy and giving back are increasingly important aspects of success.</li>
+    </ul>
+    <div class="slide-number">13 / 14</div>
+</div>
+
+<div class="slide">
+    <h2>Disclaimer</h2>
+    <ul>
+        <li>Net worth figures are estimates and subject to change.</li><li>Rankings are based on publicly available information and may vary across sources.</li><li>This presentation is for informational purposes only and does not constitute financial advice.</li>
+    </ul>
+    <div class="slide-number">14 / 14</div>
+</div>
+
+
+</body>
+</html>

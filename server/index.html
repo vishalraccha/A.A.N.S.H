@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aansh File Server</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0f1117;
+      color: #fff;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 10px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #1e90ff;
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+    }
+
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #1e90ff;
+      font-size: clamp(1rem, 3vw, 1.3rem);
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1a1c23;
+      padding: 12px 15px;
+      margin: 8px 0;
+      border-radius: 8px;
+      transition: background 0.2s;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .file-item:hover {
+      background: #22252e;
+    }
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      cursor: pointer;
+      min-width: 150px;
+    }
+
+    .file-icon {
+      font-size: 20px;
+    }
+
+    .file-name {
+      font-weight: 500;
+      word-break: break-word;
+    }
+
+    .file-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background: #1e90ff;
+      border: none;
+      padding: 8px 16px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    button:hover {
+      background: #1c7ed6;
+    }
+
+    button.danger {
+      background: #e74c3c;
+    }
+
+    button.danger:hover {
+      background: #c0392b;
+    }
+
+    button.secondary {
+      background: #6c757d;
+    }
+
+    button.secondary:hover {
+      background: #5a6268;
+    }
+
+    .upload-section {
+      background: #1a1c23;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid #2d3746;
+    }
+
+    .upload-area {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .upload-area:hover {
+      border-color: #1e90ff;
+      background: #22252e;
+      transform: translateY(-2px);
+    }
+
+    .upload-area.dragover {
+      border-color: #1e90ff;
+      background: #2a2d3a;
+      transform: scale(1.02);
+    }
+
+    input[type="file"] {
+      margin: 10px 0;
+      color: #fff;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .viewer-container {
+      background: #1a1c23;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      min-height: 400px;
+    }
+
+    .viewer-controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    #file-viewer {
+      width: 100%;
+      height: 70vh;
+      min-height: 400px;
+      border: none;
+      border-radius: 8px;
+      background: white;
+    }
+
+    pre {
+      background: #0d0e12;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      max-height: 70vh;
+      overflow: auto;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    img,
+    video,
+    audio {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    video {
+      max-height: 70vh;
+    }
+
+    .breadcrumb {
+      background: #1a1c23;
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .breadcrumb span {
+      cursor: pointer;
+      color: #1e90ff;
+    }
+
+    .breadcrumb span:hover {
+      text-decoration: underline;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: #6c757d;
+    }
+
+    .error {
+      background: #e74c3c;
+      color: white;
+      padding: 12px;
+      border-radius: 6px;
+      margin: 10px 0;
+    }
+
+    .file-type-badge {
+      font-size: 10px;
+      background: #6c757d;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+
+    /* Upload Progress Styles */
+    #upload-progress-container {
+      display: none;
+      margin: 15px 0;
+      padding: 15px;
+      background: #1e2128;
+      border-radius: 8px;
+      border: 1px solid #2d3746;
+      transition: all 0.3s ease;
+    }
+
+    #upload-status {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+
+    #upload-progress {
+      width: 100%;
+      height: 20px;
+      border-radius: 10px;
+      background: #2d3746;
+      overflow: hidden;
+    }
+
+    #upload-progress::-webkit-progress-bar {
+      background-color: #2d3746;
+      border-radius: 10px;
+    }
+
+    #upload-progress::-webkit-progress-value {
+      background: linear-gradient(90deg, #1e90ff, #00bfff);
+      border-radius: 10px;
+      transition: width 0.3s ease;
+    }
+
+    #upload-progress::-moz-progress-bar {
+      background: linear-gradient(90deg, #1e90ff, #00bfff);
+      border-radius: 10px;
+    }
+
+    /* PDF Method Buttons */
+    .pdf-method-btn {
+      background: #4a5568;
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+
+    .pdf-method-btn:hover {
+      background: #2d3746;
+    }
+
+    /* Search and Filter Styles */
+    .search-filter-section {
+      background: #1a1c23;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #4a5568;
+      border-radius: 6px;
+      background: #2d3746;
+      color: white;
+      font-size: 14px;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: #1e90ff;
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: #4a5568;
+      padding: 8px 16px;
+      font-size: 12px;
+    }
+
+    .filter-btn.active {
+      background: #1e90ff;
+    }
+
+    .filter-btn:hover {
+      background: #2d3746;
+    }
+
+    /* Bulk Actions */
+    #bulk-actions {
+      display: none;
+      background: #2d3746;
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin: 10px 0;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    #selected-count {
+      background: #1e90ff;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Upload Controls */
+    .upload-controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 5px;
+      }
+
+      .file-item {
+        padding: 10px;
+      }
+
+      .file-actions {
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      button {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+
+      .upload-section {
+        padding: 15px;
+      }
+
+      .upload-area {
+        padding: 20px 15px;
+      }
+
+      .search-filter-section {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-box {
+        min-width: auto;
+      }
+
+      .viewer-controls {
+        justify-content: center;
+      }
+
+      .upload-controls {
+        justify-content: center;
+      }
+    }
+
+    /* Animation for file operations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .file-item {
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1c23;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #4a5568;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1e90ff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>📁 Aansh File Server</h2>
+
+    <div class="upload-section">
+      <h3>📤 Upload File</h3>
+      <div class="upload-area" id="upload-area" onclick="document.getElementById('file-input').click()"
+        style="cursor: pointer;">
+        <input type="file" id="file-input" multiple style="display: none;">
+        <div style="text-align: center;">
+          <div style="font-size: 48px; margin-bottom: 10px;">📁</div>
+          <p><strong>Click to select files or drag and drop</strong></p>
+          <p style="margin-top: 10px; color: #718096; font-size: 12px;">Max file size: 100MB • Supports all file types
+          </p>
+        </div>
+      </div>
+
+      <!-- Upload Controls -->
+      <div class="upload-controls">
+        <button onclick="uploadFile()"
+          style="padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 500;">
+          🚀 Upload Selected Files
+        </button>
+        <button onclick="clearFileSelection()" class="secondary" style="padding: 12px 24px;">
+          🗑️ Clear Selection
+        </button>
+      </div>
+
+      <!-- Selected Files List -->
+      <div id="selected-files-list" style="margin-top: 15px; display: none;">
+        <h4 style="color: #a0aec0; margin-bottom: 10px; font-size: 14px;">Selected Files:</h4>
+        <div id="selected-files"></div>
+      </div>
+
+      <!-- Upload Progress Container -->
+      <div id="upload-progress-container">
+        <div id="upload-status">Preparing upload...</div>
+        <progress id="upload-progress" value="0" max="100"></progress>
+      </div>
+    </div>
+
+    <!-- Search and Filter Section -->
+    <div class="search-filter-section">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="🔍 Search files..." oninput="searchFiles()">
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterFilesByType('all')">All</button>
+        <button class="filter-btn" onclick="filterFilesByType('image')">🖼️ Images</button>
+        <button class="filter-btn" onclick="filterFilesByType('video')">🎬 Videos</button>
+        <button class="filter-btn" onclick="filterFilesByType('audio')">🎵 Audio</button>
+        <button class="filter-btn" onclick="filterFilesByType('document')">📄 Documents</button>
+        <button class="filter-btn" onclick="filterFilesByType('folder')">📁 Folders</button>
+      </div>
+    </div>
+
+    <!-- Bulk Actions -->
+    <div id="bulk-actions">
+      <span id="selected-count">0</span> files selected
+      <button onclick="deleteSelectedFiles()" class="danger">🗑️ Delete Selected</button>
+      <button onclick="clearSelection()" class="secondary">✖ Clear Selection</button>
+    </div>
+
+    <div class="breadcrumb" id="breadcrumb"></div>
+
+    <div id="file-list"></div>
+
+    <div class="viewer-container" id="viewer-section" style="display: none;">
+      <h3 id="viewer-title">📄 File Viewer</h3>
+      <div class="viewer-controls">
+        <button onclick="closeViewer()">✖ Close</button>
+        <button onclick="downloadCurrentFile()">⬇️ Download</button>
+        <button onclick="refreshFiles()" class="secondary">🔄 Refresh</button>
+        <button onclick="goHome()" class="secondary">🏠 Home</button>
+      </div>
+      <div id="file-content"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // File selection state
+    let selectedFiles = [];
+
+    // Initialize enhanced file input and progress UI
+    document.addEventListener('DOMContentLoaded', function () {
+      initializeUploadArea();
+      initializeSearchAndFilter();
+    });
+
+    function initializeUploadArea() {
+      const uploadArea = document.getElementById('upload-area');
+      const fileInput = document.getElementById('file-input');
+
+      // Add drag and drop functionality
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        uploadArea.addEventListener(eventName, preventDefaults, false);
+      });
+
+      function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      ['dragenter', 'dragover'].forEach(eventName => {
+        uploadArea.addEventListener(eventName, () => {
+          uploadArea.classList.add('dragover');
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        uploadArea.addEventListener(eventName, () => {
+          uploadArea.classList.remove('dragover');
+        }, false);
+      });
+
+      uploadArea.addEventListener('drop', handleDrop, false);
+
+      function handleDrop(e) {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+
+        if (files.length > 0) {
+          fileInput.files = files;
+          handleFileSelection();
+        }
+      }
+
+      // Handle file input change
+      fileInput.addEventListener('change', function () {
+        if (this.files.length > 0) {
+          handleFileSelection();
+        }
+      });
+    }
+
+    function handleFileSelection() {
+      const fileInput = document.getElementById('file-input');
+      const selectedFilesList = document.getElementById('selected-files-list');
+      const selectedFilesContainer = document.getElementById('selected-files');
+
+      selectedFiles = Array.from(fileInput.files);
+
+      if (selectedFiles.length > 0) {
+        selectedFilesList.style.display = 'block';
+        selectedFilesContainer.innerHTML = '';
+
+        selectedFiles.forEach((file, index) => {
+          const fileItem = document.createElement('div');
+          fileItem.className = 'file-item';
+          fileItem.style.margin = '5px 0';
+          fileItem.style.padding = '8px 12px';
+          fileItem.style.background = '#2d3746';
+
+          const fileSize = formatFileSize(file.size);
+          fileItem.innerHTML = `
+            <div class="file-info">
+              <span class="file-icon">${getFileIcon(file.name)}</span>
+              <span class="file-name">${file.name}</span>
+              <span class="file-type-badge">${fileSize}</span>
+            </div>
+            <div class="file-actions">
+              <button class="danger" onclick="removeSelectedFile(${index})">✖</button>
+            </div>
+          `;
+
+          selectedFilesContainer.appendChild(fileItem);
+        });
+      } else {
+        selectedFilesList.style.display = 'none';
+      }
+    }
+
+    function removeSelectedFile(index) {
+      selectedFiles.splice(index, 1);
+      updateFileInput();
+      handleFileSelection();
+    }
+
+    function clearFileSelection() {
+      const fileInput = document.getElementById('file-input');
+      fileInput.value = '';
+      selectedFiles = [];
+      document.getElementById('selected-files-list').style.display = 'none';
+    }
+
+    function updateFileInput() {
+      // This is a simplified version - in a real app you'd use DataTransfer
+      console.log('Selected files updated:', selectedFiles);
+    }
+
+    function formatFileSize(bytes) {
+      if (bytes === 0) return '0 B';
+      const k = 1024;
+      const sizes = ['B', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    function getFileIcon(filename) {
+      const ext = filename.split('.').pop().toLowerCase();
+      const icons = {
+        pdf: '📕',
+        doc: '📘', docx: '📘',
+        xls: '📗', xlsx: '📗',
+        ppt: '📙', pptx: '📙',
+        txt: '📄',
+        jpg: '🖼️', jpeg: '🖼️', png: '🖼️', gif: '🖼️', webp: '🖼️', svg: '🖼️',
+        mp4: '🎬', avi: '🎬', mkv: '🎬', mov: '🎬', webm: '🎬',
+        mp3: '🎵', wav: '🎵', flac: '🎵', m4a: '🎵',
+        zip: '📦', rar: '📦', '7z': '📦', tar: '📦', gz: '📦',
+        js: '📜', py: '📜', java: '📜', cpp: '📜', c: '📜',
+        html: '🌐', css: '🌐', json: '🌐', xml: '🌐',
+      };
+      return icons[ext] || '📄';
+    }
+
+    function initializeSearchAndFilter() {
+      const searchInput = document.getElementById('search-input');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+
+      // Clear search button
+      searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          this.value = '';
+          searchFiles();
+        }
+      });
+
+      // Filter button active state
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+          filterButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    }
+
+    // Quick action functions
+    function refreshFiles() {
+      loadFiles(currentPath);
+    }
+
+    function goHome() {
+      loadFiles('');
+    }
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function (e) {
+      // Refresh with F5
+      if (e.key === 'F5') {
+        e.preventDefault();
+        refreshFiles();
+      }
+
+      // Home with Escape
+      if (e.key === 'Escape') {
+        if (currentViewingFile) {
+          closeViewer();
+        } else {
+          goHome();
+        }
+      }
+
+      // Search with Ctrl+F
+      if (e.ctrlKey && e.key === 'f') {
+        e.preventDefault();
+        document.getElementById('search-input').focus();
+      }
+    });
+  </script>
+</body>
+
+</html>

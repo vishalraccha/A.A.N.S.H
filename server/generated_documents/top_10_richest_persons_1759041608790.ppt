@@ -1,0 +1,196 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" 
+                             xmlns:p="urn:schemas-microsoft-com:office:powerpoint" 
+                             xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="PowerPoint.Show">
+<meta name="Generator" content="Microsoft PowerPoint 15">
+<title>The Titans of Wealth: A Look at the World's Top 10 Richest Individuals (2024)</title>
+<!--[if gte mso 9]>
+<xml>
+<o:PresentationFormat>
+<o:Template>Blank Presentation</o:Template>
+</o:PresentationFormat>
+</xml>
+<![endif]-->
+<style>
+body { font-family: Calibri, Arial, sans-serif; margin: 0; padding: 0; }
+.slide {
+    width: 720px;
+    height: 540px;
+    margin: 20px auto;
+    padding: 40px;
+    page-break-after: always;
+    background: #4472C4;
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.slide:nth-child(even) {
+    background: #70AD47;
+}
+.slide h1 {
+    font-size: 44px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.slide h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.slide ul {
+    font-size: 24px;
+    line-height: 1.8;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+.slide li {
+    margin: 12px 0;
+    padding-left: 25px;
+    position: relative;
+}
+.slide li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 28px;
+}
+.slide-number {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+}
+</style>
+</head>
+<body>
+
+<!-- Title Slide -->
+<div class="slide">
+    <h1>The Titans of Wealth: A Look at the World's Top 10 Richest Individuals (2024)</h1>
+    <p style="font-size: 20px; margin-top: 40px;">
+        28/9/2025
+    </p>
+    <div class="slide-number">1/13</div>
+</div>
+
+
+<!-- Slide 2 -->
+<div class="slide">
+    <h2>Introduction: The Billionaire Landscape</h2>
+    <ul>
+        <li>The world's wealthiest individuals represent the pinnacle of entrepreneurial success and financial acumen.</li><li>Their fortunes are often tied to innovative technologies, strategic investments, and global market dominance.</li><li>This presentation explores the top 10 richest individuals, their sources of wealth, and their impact on the world.</li><li>Data is based on Forbes' Real-Time Billionaires List (as of October 26, 2023) and may fluctuate.</li>
+    </ul>
+    <div class="slide-number">2/13</div>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+    <h2>1. Elon Musk: The Visionary Entrepreneur</h2>
+    <ul>
+        <li>Net Worth (Approx.): $235 Billion</li><li>Source of Wealth: Tesla, SpaceX, X (formerly Twitter)</li><li>Key Achievements: Revolutionized the electric vehicle industry, pioneered reusable rocket technology, and acquired a major social media platform.</li><li>Philanthropy: Musk Foundation focuses on renewable energy, human space exploration, and AI safety.</li>
+    </ul>
+    <div class="slide-number">3/13</div>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+    <h2>2. Bernard Arnault & Family: The Luxury King</h2>
+    <ul>
+        <li>Net Worth (Approx.): $211 Billion</li><li>Source of Wealth: LVMH (Moët Hennessy Louis Vuitton)</li><li>Key Achievements: Built LVMH into the world's largest luxury goods conglomerate, owning brands like Louis Vuitton, Dior, and Tiffany & Co.</li><li>Business Strategy: Focuses on acquiring and nurturing iconic luxury brands, emphasizing craftsmanship and exclusivity.</li>
+    </ul>
+    <div class="slide-number">4/13</div>
+</div>
+
+<!-- Slide 5 -->
+<div class="slide">
+    <h2>3. Jeff Bezos: The E-Commerce Pioneer</h2>
+    <ul>
+        <li>Net Worth (Approx.): $151 Billion</li><li>Source of Wealth: Amazon</li><li>Key Achievements: Founded Amazon, transforming online retail and cloud computing.</li><li>Current Focus: Blue Origin (space exploration), The Washington Post, and philanthropic endeavors through the Bezos Earth Fund.</li>
+    </ul>
+    <div class="slide-number">5/13</div>
+</div>
+
+<!-- Slide 6 -->
+<div class="slide">
+    <h2>4. Larry Ellison: The Oracle of Databases</h2>
+    <ul>
+        <li>Net Worth (Approx.): $144 Billion</li><li>Source of Wealth: Oracle</li><li>Key Achievements: Co-founded Oracle, a leading database software company.</li><li>Investments: Holds significant stakes in Tesla and other technology companies. Known for his passion for sailing.</li>
+    </ul>
+    <div class="slide-number">6/13</div>
+</div>
+
+<!-- Slide 7 -->
+<div class="slide">
+    <h2>5. Bill Gates: The Software Mogul Turned Philanthropist</h2>
+    <ul>
+        <li>Net Worth (Approx.): $111 Billion</li><li>Source of Wealth: Microsoft</li><li>Key Achievements: Co-founded Microsoft, revolutionizing personal computing.</li><li>Current Focus: Bill & Melinda Gates Foundation, addressing global health, poverty, and education.</li>
+    </ul>
+    <div class="slide-number">7/13</div>
+</div>
+
+<!-- Slide 8 -->
+<div class="slide">
+    <h2>6. Warren Buffett: The Oracle of Omaha</h2>
+    <ul>
+        <li>Net Worth (Approx.): $107 Billion</li><li>Source of Wealth: Berkshire Hathaway</li><li>Key Achievements: Built Berkshire Hathaway into a diversified holding company through value investing.</li><li>Investment Philosophy: Focuses on long-term investments in companies with strong fundamentals and sustainable competitive advantages.</li>
+    </ul>
+    <div class="slide-number">8/13</div>
+</div>
+
+<!-- Slide 9 -->
+<div class="slide">
+    <h2>7. Mark Zuckerberg: The Social Media Architect</h2>
+    <ul>
+        <li>Net Worth (Approx.): $99 Billion</li><li>Source of Wealth: Meta Platforms (Facebook, Instagram, WhatsApp)</li><li>Key Achievements: Co-founded Facebook, connecting billions of people worldwide.</li><li>Current Focus: Metaverse development, artificial intelligence, and expanding Meta's reach.</li>
+    </ul>
+    <div class="slide-number">9/13</div>
+</div>
+
+<!-- Slide 10 -->
+<div class="slide">
+    <h2>8. Larry Page: The Search Engine Innovator</h2>
+    <ul>
+        <li>Net Worth (Approx.): $96 Billion</li><li>Source of Wealth: Google (Alphabet)</li><li>Key Achievements: Co-founded Google, revolutionizing internet search and online advertising.</li><li>Current Role: Board member and controlling shareholder of Alphabet Inc.</li>
+    </ul>
+    <div class="slide-number">10/13</div>
+</div>
+
+<!-- Slide 11 -->
+<div class="slide">
+    <h2>9. Sergey Brin: The Algorithm Architect</h2>
+    <ul>
+        <li>Net Worth (Approx.): $93 Billion</li><li>Source of Wealth: Google (Alphabet)</li><li>Key Achievements: Co-founded Google, transforming information access and technology.</li><li>Current Role: Board member and controlling shareholder of Alphabet Inc.</li>
+    </ul>
+    <div class="slide-number">11/13</div>
+</div>
+
+<!-- Slide 12 -->
+<div class="slide">
+    <h2>10. Michael Dell: The PC Pioneer</h2>
+    <ul>
+        <li>Net Worth (Approx.): $73 Billion</li><li>Source of Wealth: Dell Technologies</li><li>Key Achievements: Founded Dell, revolutionizing the personal computer industry through direct sales and customization.</li><li>Business Strategy: Focuses on providing end-to-end technology solutions for businesses and consumers.</li>
+    </ul>
+    <div class="slide-number">12/13</div>
+</div>
+
+<!-- Slide 13 -->
+<div class="slide">
+    <h2>Key Takeaways: Common Threads of Success</h2>
+    <ul>
+        <li>Innovation: A relentless pursuit of new technologies and business models.</li><li>Vision: The ability to anticipate future trends and capitalize on emerging opportunities.</li><li>Strategic Investments: Smart allocation of capital to drive growth and diversification.</li><li>Global Reach: Expanding operations and influence across international markets.</li><li>Resilience: Overcoming challenges and adapting to changing market conditions.</li>
+    </ul>
+    <div class="slide-number">13/13</div>
+</div>
+
+
+</body>
+</html>
